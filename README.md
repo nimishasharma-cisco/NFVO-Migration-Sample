@@ -11,4 +11,4 @@ Assumptions:
 
 Overview of steps for migration
 
-![image](https://wwwin-github.cisco.com/storage/user/89/files/3c07d400-a9a7-11ea-987d-c02def5927bf)
+![image](https://user-images.githubusercontent.com/66647064/84090999-1b8c4980-a9a8-11ea-8b45-2fde6e3bbb76.png)
