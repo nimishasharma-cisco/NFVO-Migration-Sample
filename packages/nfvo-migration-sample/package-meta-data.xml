@@ -1,0 +1,13 @@
+<ncs-package xmlns="http://tail-f.com/ns/ncs-packages">
+  <name>nfvo-migration-sample</name>
+  <package-version>1.0</package-version>
+  <description>Generated Python package</description>
+  <ncs-min-version>5.2</ncs-min-version>
+
+  <component>
+    <name>main</name>
+    <application>
+      <python-class-name>nfvo_migration_sample.main.Main</python-class-name>
+    </application>
+  </component>
+</ncs-package>

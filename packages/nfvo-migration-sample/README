@@ -1,0 +1,4 @@
+Sample package to demo NFVO rel2 to rel3 migration.
+
+This package has a sample service that creates a rel2 vnf-info service to start with. The template can be replaced to create a rel3 service.
+This package also exposes an action to migrate NFVO oper data.

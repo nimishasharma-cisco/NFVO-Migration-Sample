@@ -1,0 +1,61 @@
+module nfvo-migration-sample {
+
+  namespace "http://example.com/nfvo-migration-sample";
+  prefix nfvo-migration-sample;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  description
+    "Sample package to create vnf-info service. This package also has an action to migrate NFVO operational data.";
+
+  revision 2020-04-16 {
+    description
+      "Initial revision.";
+  }
+
+  list sample-service {
+    description "Sample service to create vnf-info";
+
+    key name;
+    leaf name {
+      tailf:info "Sample Service name";
+      description "Sample Service name.";
+      tailf:cli-allow-range;
+      type string;
+    }
+
+    uses ncs:service-data;
+    ncs:servicepoint sample-service-servicepoint;
+
+    leaf device {
+      tailf:info "ESC Device to create NFVO service.";
+      description "ESC Device to create NFVO service.";
+      type leafref {
+        path "/ncs:devices/ncs:device/ncs:name";
+      }
+    }
+  }
+  
+  container nfvo-migration-sample {
+    description "Action to migrate NFVO Operational data.";
+    
+    tailf:action migrate-vnf-info-services {
+      tailf:actionpoint vnf-info-migration-actionpoint;
+      tailf:info "Action to migrate NFVO Operational data.";
+      description "Action to migrate NFVO Operational data.";
+      output {
+        leaf result {
+          type string;
+        }
+      }
+    }
+  }
+}

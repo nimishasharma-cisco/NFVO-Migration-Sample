@@ -1,0 +1,12 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+        <kickers xmlns="http://tail-f.com/ns/kicker">
+    <data-kicker>
+      <id>day-n-create</id>
+      <monitor>/nfv/cisco-nfvo:vnf-info-plan[name='{$VNF-INFO}']/plan/component[type='cisco-nfvo-nano-services:deployment'][name='{$CUSTOM-DEP}']/state[name='ncs:ready']</monitor>
+      <trigger-expr>status='reached'</trigger-expr>
+      <trigger-type>enter</trigger-type>
+      <kick-node>/sample-service[name='{$SERVICE}']</kick-node>
+      <action-name>re-deploy</action-name>
+    </data-kicker>
+  </kickers>
+</config>
